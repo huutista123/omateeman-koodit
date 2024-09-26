@@ -1,0 +1,192 @@
+/*
+Theme Name: Custom Theme
+Theme URI: http://example.com/custom-theme
+Author: Vili
+Author URI: http://example.com
+Description: Mukautettu Teema
+Version: 1.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    min-height: 100%;
+    background-color: #D3D3D3;
+    color: #E0E0E0;
+}
+.box {
+    background-color: #004d00; 
+    border: 2px solid #004d00; 
+    border-radius: 10px;       
+    padding: 10px;             
+    margin: 15px 0;          
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    text-align: left;          
+    width: 50%;                
+    max-width: 400px;          
+    
+}
+
+.grid-container > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+.mustateksti {
+    color: rgb(255, 255, 255);          
+    font-size: large;     
+}
+.header {
+    grid-area: header;
+    background-color: #004d00;
+    font-size: 23px;
+    color: white;
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: #007A33;
+    font-size: 23px;
+    color: white;
+}
+
+.main {
+    grid-area: main;
+    background-color: #d3d3d3;
+    font-size: 23px;
+    color: #E0E0E0;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #007A33;
+    color: white;
+    font-size: 18px;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #004d00;
+    font-size: 23px;
+    color: white;
+    animation: bounce 0.7s ease forwards; 
+}
+
+/* animaatio säädöt*/
+@keyframes bounce {
+    0% {
+        transform: translateY(100px); 
+    }
+    60% {
+        transform: translateY(-25px); /* ylös */
+    }
+    80% {
+        transform: translateY(10px); /*vähän alas */
+    }
+    100% {
+        transform: translateY(0px); /* perus kohdalle */
+    }
+}
+
+.grid-container {
+    display: grid;
+    gap: 5px;
+    grid-template: 
+        "header" 100px
+        "navbar" 50px
+        "main" auto
+        "sidebar" 100px
+        "footer" 100px;
+}
+
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template: 
+            "header header" 100px
+            "navbar navbar" 70px
+            "sidebar main" auto
+            "footer footer" 50px / 
+            200px auto; 
+    }
+}
+
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template:
+            "header header header" 100px
+            "navbar main sidebar" auto
+            "footer footer footer" 100px / 
+            200px auto 200px; 
+    }
+}
+
+.navbar button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #005900;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.color-change-button {
+    background-color: #004d00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.color-change-button:hover {
+    background-color: #007A33;
+    font-size: 23px;
+}
+
+.teksti-vasemmalle {
+    text-align: left;
+}
+
+.resized-image {
+    width: 400px;
+    height: auto;
+    display: inline-block; 
+    margin: 10px; 
+}
+
+.gray-box {
+    background-color: #004d00;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.container {
+    width: 100%;
+    background-color: #050505;
+}
+
+.skills {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
